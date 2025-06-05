@@ -2,7 +2,7 @@
 
 namespace RonnieProjectsAssignment;
 
-public class ApiDownloader
+public static class ApiDownloader
 {
     private static readonly HttpClient HttpClient = new HttpClient();
 

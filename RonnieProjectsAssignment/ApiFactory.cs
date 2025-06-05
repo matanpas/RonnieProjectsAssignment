@@ -1,6 +1,6 @@
 ﻿namespace RonnieProjectsAssignment;
 
-public class ApiFactory
+public static class ApiFactory
 {
     private static readonly string[] Urls =
     [
