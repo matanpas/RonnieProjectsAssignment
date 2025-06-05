@@ -2,20 +2,20 @@
 
 namespace RonnieProjectsAssignment;
 
-public class ApiParser1 : IApiParser
+public class ApiParser4 : IApiParser
 {
-    private const int SourceId = 1;
+    private const int SourceId = 4;
 
     public User ParseElement(JsonElement item)
     {
-        string firstName = item.GetProperty("name").GetProperty("first").GetString() ?? "";
-        string lastName = item.GetProperty("name").GetProperty("last").GetString() ?? "";
+        string firstName = item.GetProperty("first_name").GetString() ?? "";
+        string lastName = item.GetProperty("last_name").GetString() ?? "";
         string email = item.GetProperty("email").GetString() ?? "";
         return new User(firstName, lastName, email, SourceId);
     }
 
     public JsonElement GetListProperty(JsonElement mainJson)
     {
-        return mainJson.GetProperty("results");
+        return mainJson.GetProperty("data");
     }
 }

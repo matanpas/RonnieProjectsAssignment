@@ -4,5 +4,6 @@ namespace RonnieProjectsAssignment;
 
 public interface IApiParser
 {
-    public Entity ParseElement(JsonElement element);
+    public User ParseElement(JsonElement item);
+    public JsonElement GetListProperty(JsonElement mainJson);
 }
