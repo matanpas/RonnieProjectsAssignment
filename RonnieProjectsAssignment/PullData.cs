@@ -14,7 +14,13 @@ internal static class PullData
         string? path = Console.ReadLine();
         try
         {
-            return Path.GetFullPath(path!);
+            string fullPath = Path.GetFullPath(path!);
+            if (Directory.Exists(fullPath))
+            {
+                return fullPath;
+            }
+
+            throw new Exception();
         }
         catch (Exception)
         {
@@ -83,6 +89,7 @@ internal static class PullData
                 break;
             }
         }
+
         Console.WriteLine("done.");
     }
 }
